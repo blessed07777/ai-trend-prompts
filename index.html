@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#f3f4f6" />
+  <title>AI Trend · Промпты — игры и генерация изображений</title>
+  <meta name="description" content="Каталог детальных промптов для AI-игр и генерации изображений. Персонализация, рабочие кнопки, играбельные демо прямо в браузере." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css?v=3" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍌</text></svg>" />
+</head>
+<body>
+  <!-- ===================== HEADER ===================== -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="logo" href="#top">
+        <span class="logo-mark">AI&nbsp;Trend</span>
+        <span class="logo-dot">·</span>
+        <span class="logo-accent">Промпты</span>
+      </a>
+
+      <nav class="tabs" id="tabs" aria-label="Разделы">
+        <button class="tab" data-tab="boys"><span class="tab-emoji">🎮</span> Мальчики</button>
+        <button class="tab is-active" data-tab="girls"><span class="tab-emoji">👗</span> Девочки</button>
+        <button class="tab" data-tab="images"><span class="tab-emoji">🎨</span> Генерация фото</button>
+      </nav>
+
+      <button class="theme-toggle" id="themeToggle" title="Сменить тему" aria-label="Сменить тему">
+        <span class="theme-icon">🌙</span>
+      </button>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- ===================== PERSONALIZATION ===================== -->
+    <section class="panel personalize">
+      <div class="personalize-label">
+        <span class="pencil">✏️</span>
+        <span>ПЕРСОНАЛИЗАЦИЯ</span>
+      </div>
+
+      <div class="field">
+        <label for="studentName">Имя ученика</label>
+        <input id="studentName" type="text" value="Темирлан" autocomplete="off" spellcheck="false" />
+      </div>
+
+      <div class="field grow">
+        <label for="studentDesc">Описание ученика</label>
+        <input id="studentDesc" type="text" placeholder="Амбициозный, добрый, весёлый" autocomplete="off" />
+      </div>
+
+      <div class="inserted-chip" id="insertedChip">
+        <span class="check">✅</span>
+        <span><b id="chipName">Темирлан</b> — вставлено в <b id="chipCount">22</b> промпта</span>
+      </div>
+    </section>
+
+    <!-- ===================== SECTION HEAD ===================== -->
+    <div class="section-head" id="sectionHead">
+      <div class="section-kicker" id="sectionKicker">РАЗДЕЛ 02</div>
+      <h1 class="section-title" id="sectionTitle">Игры для девочек</h1>
+      <p class="section-sub" id="sectionSub">Девочки 12–17 ценят эстетику, кастомизацию и социальный нарратив.</p>
+    </div>
+
+    <!-- ===================== CARD GRID ===================== -->
+    <section class="grid" id="grid" aria-live="polite"></section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">AI&nbsp;Trend · Промпты</div>
+      <div class="footer-meta">Каталог промптов и играбельных демо · сделано с 🍌</div>
+    </div>
+  </footer>
+
+  <!-- ===================== MODAL ===================== -->
+  <div class="modal-backdrop" id="modal" hidden>
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <div class="modal-head">
+        <h2 id="modalTitle">Игра</h2>
+        <button class="modal-close" id="modalClose" aria-label="Закрыть">✕</button>
+      </div>
+      <div class="modal-body" id="modalBody"></div>
+    </div>
+  </div>
+
+  <!-- ===================== TOAST ===================== -->
+  <div class="toast" id="toast" hidden></div>
+
+  <script src="js/data.js?v=2"></script>
+  <script src="js/games.js?v=2"></script>
+  <script src="js/imagelab.js?v=2"></script>
+  <script src="js/app.js?v=2"></script>
+</body>
+</html>
