@@ -59,24 +59,30 @@ const GAME_DATA = [
     title: 'Space Defender', tagline: 'Оборона орбиты · волны врагов · апгрейды · боссы',
     role: 'Пилот: <b>{name}</b> · позывной «Banana-1»',
     prompt:
-`Create a browser game in a single HTML file using HTML5 Canvas — space shooter "SPACE DEFENDER".
+`Создай браузерную игру в одном HTML-файле на HTML5 Canvas — космический шутер «SPACE DEFENDER».
 
-PLAYER: Commander = {name} · Ship = "Banana-1" · Permanent badge: "AI Pilot · {name}"
-PERSONALITY: {desc} — reflect it in the start-screen greeting and victory taunts.
+ИГРОК: командир = {name} · корабль «Banana-1» · постоянный бейдж «AI-пилот · {name}». Характер: {desc} — отрази в приветствии на старте и в победных репликах.
 
-GOAL: Survive endless waves of alien ships, protect the planet at the bottom of the screen.
+ЦЕЛЬ: пережить бесконечные волны пришельцев и защитить планету у нижнего края экрана.
 
-CORE MECHANICS:
-• Player ship at the bottom; move with ←/→ or A/D or by dragging finger; auto-fire + Space for a focused burst.
-• Enemies fly in formation patterns (sine waves, dives, V-formations) and shoot back.
-• Every 5th wave spawns a BOSS with a health bar and a multi-phase attack.
-• Power-ups drop from killed enemies: triple-shot, shield bubble, slow-mo, +1 life.
-• Combo meter: chained kills without taking damage multiply the score.
+МЕХАНИКА:
+• Корабль игрока внизу: движение ←/→ / A-D или перетаскиванием пальцем; авто-стрельба + Пробел/тап — мощный залп.
+• Враги летят узорами (синусы, пике, V-строй) и стреляют в ответ; разные классы (юркий дрон, истребитель, тяжёлый крейсер).
+• Каждая 5-я волна — БОСС с полоской HP и несколькими фазами атаки.
+• Бонусы из убитых врагов: тройной выстрел, щит-пузырь, замедление времени, +1 жизнь.
+• Счётчик комбо: серии убийств без урона множат очки.
 
-CONTROLS: keyboard arrows + space, OR mouse aim, OR touch drag to move & tap to shoot.
-UI: top HUD shows score, wave, lives (heart icons), combo multiplier, boss health.
-PROGRESSION: enemies get faster & denser each wave; difficulty curve is smooth.
-ART: neon starfield parallax background, glowing lasers, particle explosions, screen shake on hits.
+ВИЗУАЛ И ДЕТАЛИЗАЦИЯ (очень детально, вау-эффект):
+• Палитра: глубокий тёмно-синий→фиолетовый космос, неоновый циан и маджента для лазеров, золотой корпус корабля.
+• Корабль игрока — детальный истребитель: крылья, светящийся кокпит, пульсирующие двигатели с синим пламенем и искрами.
+• Враги разной формы и цвета, со свечением глаз; босс — крупный, с башнями, антеннами и анимированной полоской HP.
+• Лазеры с glow и трейлами; взрыв = вспышка + кольцо ударной волны + разлетающиеся осколки + лёгкий screen shake.
+• Фон: 3 слоя параллакса звёзд, мягкие туманности (боке), вдалеке проплывают планеты и метеоры.
+• Бонусы — светящиеся капсулы с иконкой и пульсацией.
+
+РАСКЛАДКА (без наложений): HUD — узкая полоса сверху (очки слева, «Волна N» по центру, жизни-иконки и комбо справа); полоса HP босса — под HUD; игровое поле — центр; корабль — у нижнего края.
+
+УПРАВЛЕНИЕ: стрелки/мышь/тач; Пробел/тап — залп.
 
 ${TECH}
 
@@ -89,23 +95,29 @@ ${DEVCARD}`
     title: 'Turbo Racer', tagline: 'Бесконечная трасса · дрифт · нитро · рекорды',
     role: 'Гонщик: <b>{name}</b> на болиде «{name} GT»',
     prompt:
-`Create a browser game in a single HTML file using HTML5 Canvas — endless racer "TURBO RACER".
+`Создай браузерную игру в одном HTML-файле на HTML5 Canvas — бесконечную гонку «TURBO RACER».
 
-PLAYER: Driver = {name} · Car = "{name} GT" · Permanent badge: "AI Racer · {name}"
-PERSONALITY: {desc}.
+ИГРОК: гонщик = {name} · болид «{name} GT» · постоянный бейдж «AI-гонщик · {name}». Характер: {desc}.
 
-GOAL: Drive as far as possible on a busy highway without crashing; beat your best distance.
+ЦЕЛЬ: проехать как можно дальше по оживлённому шоссе без аварий и побить рекорд дистанции.
 
-CORE MECHANICS:
-• 3–4 lane road scrolling toward the player, pseudo-3D perspective (road narrows to a horizon).
-• Switch lanes with ←/→ / A-D / swipe; hold ↑ for nitro (overheats — manage a boost bar).
-• Avoid traffic cars and oil slicks; collect coins and fuel cans.
-• Speed steadily increases; near-misses give a "CLOSE!" bonus and a short slow-motion frame.
-• Day → sunset → night cycle every 1000m with changing palette.
+МЕХАНИКА:
+• Дорога на 3–4 полосы уходит к горизонту (псевдо-3D перспектива, разметка движется на игрока).
+• Смена полосы ←/→ / A-D / свайп; удержание ↑ — нитро (перегревается, следи за полоской буста).
+• Уворачивайся от трафика и луж масла; собирай монеты и канистры топлива.
+• Скорость плавно растёт; за близкий промах — бонус «БЛИЗКО!» и короткое замедление.
+• Цикл день → закат → ночь каждые 1000 м со сменой палитры.
 
-CONTROLS: arrows / A-D / swipe to steer, up-arrow or tap-hold for nitro.
-UI: speedometer, distance (m), coins, nitro/heat bar, best distance.
-ART: parallax roadside (trees, signs, city), motion blur lines, sparks on near-miss, particle smoke.
+ВИЗУАЛ И ДЕТАЛИЗАЦИЯ (очень детально, вау-эффект):
+• Болид (вид сзади-сверху): спойлер, диски, фары, выхлоп с языком пламени при нитро.
+• Трафик — разные машины и цвета; конусы, лужи с бликами.
+• Обочина-параллакс: деревья, фонари, билборды с надписью «{name} GT», вдали — силуэт города.
+• Эффекты: линии motion-blur по краям, искры при близком промахе, дым из-под колёс, яркая вспышка и трейл на нитро; ночью — свет фар и неон.
+• Небо меняется по времени суток (градиенты), на закате — тёплые тона, ночью — звёзды.
+
+РАСКЛАДКА (без наложений): сверху — дистанция (м) и монеты; спидометр-дуга — внизу слева; полоса нитро/перегрева — внизу справа; дорога — на всём поле.
+
+УПРАВЛЕНИЕ: ←/→ / A-D / свайп — полоса; ↑ или удержание-тап — нитро.
 
 ${TECH}
 
@@ -118,23 +130,29 @@ ${DEVCARD}`
     title: 'Penalty King', tagline: 'Серия пенальти · аим + сила · вратарь-AI · рейтинг',
     role: 'Бомбардир: <b>{name}</b> · клуб «{name} FC»',
     prompt:
-`Create a browser game in a single HTML file using HTML5 Canvas — football game "PENALTY KING".
+`Создай браузерную игру в одном HTML-файле на HTML5 Canvas — футбольные пенальти «PENALTY KING».
 
-PLAYER: Striker = {name} · Club = "{name} FC" · Permanent badge: "AI Striker · {name}"
-PERSONALITY: {desc}.
+ИГРОК: бомбардир = {name} · клуб «{name} FC» · постоянный бейдж «AI-форвард · {name}». Характер: {desc}.
 
-GOAL: Score as many penalties as possible in a 5-shot round, then sudden-death.
+ЦЕЛЬ: забить как можно больше пенальти в серии из 5 ударов, затем — серия до промаха.
 
-CORE MECHANICS:
-• Aim: a moving target reticle inside the goal (or drag to aim on touch).
-• Power: a rising/falling power bar — click/tap at the right moment to set shot strength.
-• Curve: a third quick swipe/tap sets curve (ball bends in flight).
-• Goalkeeper AI dives smartly; harder rounds = better keeper reading your aim.
-• Ball physics with gravity, spin and a satisfying net bulge on a goal.
+МЕХАНИКА:
+• Прицел: движущееся кольцо внутри ворот (на тач — наведение пальцем).
+• Сила: растущая/падающая полоса — нажми в нужный момент, чтобы задать мощность.
+• Закрутка: третий быстрый тап/свайп задаёт подкрутку (мяч гнётся в полёте).
+• Вратарь-AI прыгает с умом; чем дальше раунд, тем лучше он читает прицел.
+• Физика мяча: гравитация, вращение, приятное проседание сетки при голе.
 
-CONTROLS: move reticle (mouse/touch), click to lock aim → click to lock power → flick for curve.
-UI: shots taken, goals, streak, accuracy %, keeper difficulty.
-ART: stadium with crowd, stripes on the pitch, confetti on a goal, slow-mo replay arc.
+ВИЗУАЛ И ДЕТАЛИЗАЦИЯ (очень детально, вау-эффект):
+• Стадион: трибуны с анимированной толпой (точки-болельщики, редкие вспышки фотокамер), прожекторы, газон в полоску с разметкой, ворота с сеткой.
+• Мяч — классический с чёрными пятиугольниками, бликом и тенью на газоне; в полёте вращается.
+• Вратарь детальный, в перчатках, с анимацией прыжка и приземления.
+• Прицел — светящееся кольцо с перекрестьем; полоса силы сбоку с градиентом зелёный→красный; индикатор закрутки.
+• Эффекты: сетка дрожит и конфетти при голе, slow-mo дуга мяча, вспышки прожекторов; «СЕЙВ» при отбитом.
+
+РАСКЛАДКА (без наложений): сверху — голы / удары / серия / точность %; ворота с вратарём — в верхней половине; полоса силы — справа по вертикали; мяч и точка удара — снизу по центру.
+
+УПРАВЛЕНИЕ: навёл прицел (мышь/тач) → клик зафиксировал прицел → клик зафиксировал силу → флик задаёт закрутку.
 
 ${TECH}
 
@@ -148,23 +166,28 @@ ${DEVCARD}`
     role: 'Ниндзя: <b>{name}</b>',
     theme: 'ninja',
     prompt:
-`Create a browser game in a single HTML file using HTML5 Canvas — endless runner "NINJA RUN".
+`Создай браузерную игру в одном HTML-файле на HTML5 Canvas — бесконечный раннер «NINJA RUN».
 
-PLAYER: Ninja = {name} · Permanent badge: "AI Ninja · {name}"
-PERSONALITY: {desc}.
+ИГРОК: ниндзя = {name} · постоянный бейдж «AI-ниндзя · {name}». Характер: {desc}.
 
-GOAL: Run as far as possible across rooftops, dodging obstacles and slicing coins.
+ЦЕЛЬ: пробежать как можно дальше по крышам, уворачиваясь от препятствий и собирая монеты.
 
-CORE MECHANICS:
-• Auto-run to the right; Space/↑/tap to jump (hold for higher), ↓/swipe-down to slide.
-• Double-jump unlocked; wall-slide on tall obstacles.
-• Obstacles: gaps, spikes, low beams (slide), flying drones (jump).
-• Collect coins and shuriken; shuriken let you slice one obstacle.
-• Distance-based speed ramp with parallax city at dusk.
+МЕХАНИКА:
+• Авто-бег вправо; Пробел/↑/тап — прыжок (удержание — выше), двойной прыжок; ↓/свайп-вниз — подкат.
+• Препятствия: ящики и шипы (перепрыгнуть), низкие балки/лазеры (подкат), летающие дроны (прыжок), провалы между крышами.
+• Монеты и сюрикены; сюрикен позволяет разрубить одно препятствие (эффект slash).
+• Скорость нарастает с дистанцией.
 
-CONTROLS: Space/↑/tap = jump, ↓/swipe-down = slide.
-UI: distance, coins, multiplier, best run.
-ART: silhouette ninja with a trailing scarf, glowing neon city skyline, dust particles on landing.
+ВИЗУАЛ И ДЕТАЛИЗАЦИЯ (очень детально, вау-эффект):
+• Сеттинг — неоновый ночной киберпанк-город: фиолетово-синее небо, луна, лёгкий туман/дождь, неоновые вывески (на одной — «{name}»).
+• Ниндзя — стильный силуэт с развевающимся красным шарфом; чёткие анимации бега, прыжка, подката, вихря при двойном прыжке.
+• Препятствия и дроны детальные, со свечением; монеты и сюрикены сияют и искрят при сборе.
+• Параллакс: дальний небоскрёбный фон, средний слой зданий, передний слой крыш; неоновые отражения на мокрых поверхностях.
+• Эффекты: облачко пыли при приземлении, трейл за ниндзя, рассечение при разрубании, лёгкий screen shake на провале.
+
+РАСКЛАДКА (без наложений): сверху — дистанция (м), монеты, множитель; герой и крыши — центр/низ; небо и город — фон.
+
+УПРАВЛЕНИЕ: Пробел/↑/тап — прыжок; ↓/свайп-вниз — подкат.
 
 ${TECH}
 
@@ -177,22 +200,28 @@ ${DEVCARD}`
     title: 'Snake Arena', tagline: 'Неоновая змейка · ускорения · бонусы · стены-порталы',
     role: 'Игрок: <b>{name}</b>',
     prompt:
-`Create a browser game in a single HTML file using HTML5 Canvas — modern snake "SNAKE ARENA".
+`Создай браузерную игру в одном HTML-файле на HTML5 Canvas — современную змейку «SNAKE ARENA».
 
-PLAYER: Player = {name} · Permanent badge: "AI Snake Master · {name}"
-PERSONALITY: {desc}.
+ИГРОК: игрок = {name} · постоянный бейдж «AI-мастер змейки · {name}». Характер: {desc}.
 
-GOAL: Grow the longest snake without hitting yourself; chase a high score.
+ЦЕЛЬ: вырастить самую длинную змейку, не врезавшись в себя, и набрать рекорд.
 
-CORE MECHANICS:
-• Smooth grid movement with rounded, glowing snake body and animated head.
-• Eat fruit to grow +1; golden fruit = +5 and brief speed-boost; bomb fruit = shrink, avoid.
-• Edges are portals (wrap around). Optional walls toggle on the start screen.
-• Speed gently increases with length; combo bonus for eating quickly.
+МЕХАНИКА:
+• Плавное движение по сетке, округлое светящееся тело и анимированная голова.
+• Обычный фрукт = +1 рост; золотой фрукт = +5 и короткий буст скорости; фрукт-бомба = укорачивает, избегай.
+• Края — порталы (переход на другую сторону). Опция «стены вкл/выкл» на старте.
+• Скорость мягко растёт с длиной; бонус за быстрые поедания.
 
-CONTROLS: arrows / WASD / swipe on touch.
-UI: score, length, speed, best score.
-ART: dark neon arena, particle pop when eating, subtle grid glow, trail fade.
+ВИЗУАЛ И ДЕТАЛИЗАЦИЯ (очень детально, вау-эффект):
+• Тёмная неоновая арена со слабо светящейся сеткой и виньеткой.
+• Змейка — округлые сегменты с градиентом тела и glow; голова с глазами, смотрящими по направлению; при бусте тело переливается радугой.
+• Еда: яблоко с бликом, золотая звезда с пульсирующим свечением, бомба с фитильком.
+• Порталы по краям — с эффектом мерцания/перехода.
+• Эффекты: частицы-«поп» при поедании, лёгкая пульсация, затухающий трейл за хвостом.
+
+РАСКЛАДКА (без наложений): сверху — длина, очки, рекорд; арена-сетка занимает квадратное поле по центру, не вылезая за края.
+
+УПРАВЛЕНИЕ: стрелки / WASD / свайп.
 
 ${TECH}
 
@@ -206,22 +235,28 @@ ${DEVCARD}`
     role: 'Капитан: <b>{name}</b>',
     theme: 'meteor',
     prompt:
-`Create a browser game in a single HTML file using HTML5 Canvas — catch-and-dodge game "METEOR CATCHER".
+`Создай браузерную игру в одном HTML-файле на HTML5 Canvas — «лови и уворачивайся» «METEOR CATCHER».
 
-PLAYER: Captain = {name} · Permanent badge: "AI Captain · {name}"
-PERSONALITY: {desc}.
+ИГРОК: капитан = {name} · постоянный бейдж «AI-капитан · {name}». Характер: {desc}.
 
-GOAL: Catch falling crystals with your collector while dodging dangerous meteors.
+ЦЕЛЬ: ловить падающие кристаллы коллектором и уворачиваться от опасных метеоров.
 
-CORE MECHANICS:
-• Move the collector left/right (mouse / arrows / drag) along the bottom.
-• Good drops (crystals, stars, fuel) = points; bad drops (red meteors) = lose a life.
-• Combo for catching several good items in a row; a shield power-up blocks one meteor.
-• Fall speed and density increase over time; occasional "crystal rain" bonus burst.
+МЕХАНИКА:
+• Двигай коллектор влево/вправо (мышь / ←→ / перетаскивание) вдоль нижнего края.
+• Хорошее (кристаллы, звёзды, топливо) = очки; плохое (красный метеор) = минус жизнь.
+• Комбо за серию пойманного хорошего; бонус-щит блокирует один метеор.
+• Скорость и плотность падения растут со временем; иногда — бонусный «кристальный дождь».
 
-CONTROLS: move horizontally with mouse / ←→ / touch-drag.
-UI: score, lives, combo, shield status, best score.
-ART: deep-space gradient, twinkling stars, glowing crystals, fiery meteor trails, catch sparkle.
+ВИЗУАЛ И ДЕТАЛИЗАЦИЯ (очень детально, вау-эффект):
+• Палитра — глубокий космос: тёмно-синий→индиго, мерцающие звёзды, мягкие туманности.
+• Коллектор/корабль внизу — детальный, со свечением и лёгким покачиванием.
+• Кристаллы разноцветные, с гранями и бликом; метеоры — раскалённые, с огненным хвостом и искрами.
+• Щит — переливающийся пузырь вокруг коллектора.
+• Эффекты: вспышка-сверкание при ловле, взрыв метеора с осколками, screen shake и красная вспышка при потере жизни.
+
+РАСКЛАДКА (без наложений): сверху — очки, жизни-иконки, комбо, статус щита, рекорд; коллектор — у нижнего края; объекты падают по всему полю.
+
+УПРАВЛЕНИЕ: мышь / ←→ / перетаскивание пальцем по горизонтали.
 
 ${TECH}
 
@@ -236,23 +271,34 @@ ${DEVCARD}`
     title: 'Style Studio', tagline: 'Свой бренд одежды · подбор образов · показ · продажи',
     role: 'Дизайнер: <b>{name}</b> Studio',
     prompt:
-`Create a browser game in a single HTML file using HTML5 Canvas — fashion brand simulator "STYLE STUDIO".
+`Создай браузерную игру в одном HTML-файле на HTML5 Canvas — симулятор бренда одежды «STYLE STUDIO».
 
-PLAYER: Designer = {name} · Brand = "{name} Studio" · Permanent badge: "AI Designer · {name}"
-PERSONALITY: {desc} — let it shape the client compliments.
+ИГРОК: дизайнер = {name} · бренд «{name} Studio» · постоянный бейдж «AI-дизайнер · {name}». Характер: {desc} — пусть влияет на комплименты клиентов.
 
-GOAL: Read each client's request and dress the runway model to match the brief; earn stars and grow the brand.
+ЦЕЛЬ: читать бриф клиента и одевать модель на подиуме под запрос; зарабатывать звёзды и растить бренд.
 
-CORE MECHANICS:
-• A client appears with a brief: target color palette, vibe (cute / elegant / sporty / party) and a key item.
-• Pick top, bottom, shoes and an accessory from a wardrobe; the look updates live on the model.
-• A live "match score" rises as your picks fit the brief; submit the look for a star rating (1–5).
-• Earn coins → unlock new clothing packs and patterns; reputation bar fills toward a runway show.
-• Timed "trend rush" rounds for bonus coins.
+МЕХАНИКА:
+• Приходит клиент с брифом: палитра, вайб (милый / элегантный / спортивный / вечеринка) и ключевая вещь.
+• Выбираешь верх, низ, обувь и аксессуар из гардероба — образ обновляется на модели вживую.
+• «Метр совпадения» растёт по мере удачных выборов; отправляешь образ → оценка 1–5 звёзд.
+• Монеты → новые коллекции и принты; шкала репутации ведёт к показу мод.
+• Раунды «трендовая лихорадка» на время — за бонусные монеты.
 
-CONTROLS: click/tap wardrobe items; buttons to rotate the model and submit.
-UI: brief card, match meter, stars, coins, reputation, collection unlocks.
-ART: cute flat-style model, pastel boutique, sparkle on a 5-star look, confetti on the show.
+ВИЗУАЛ И ДЕТАЛИЗАЦИЯ (очень детально, вау-эффект):
+• Бутик: пастельные стены, подиум с подсветкой, софиты, зеркало, мягкие тени.
+• Модель — детальная стилизованная фигура (причёска, лицо, поза); одежда рисуется реальными силуэтами вещей (платье, топ, юбка, брюки, обувь, аксессуар), НЕ цветными прямоугольниками, и надевается послойно.
+• Карточки гардероба — с мини-превью вещи и подписью названия.
+• Эффекты: блеск и конфетти при 5 звёздах, мягкое свечение метра совпадения, пружинистая смена вещей.
+
+РАСКЛАДКА — ВАЖНО, чтобы НИЧЕГО не перекрывалось:
+• Карточка брифа — слева сверху (фикс. зона).
+• Модель — по центру сцены.
+• Гардероб — отдельной панелью справа (или нижней лентой): аккуратная сетка карточек с превью + подписью.
+• Метр совпадения — узкой полосой над гардеробом.
+• Кнопка «Показать образ» — отдельной зоной В САМОМ НИЗУ, НЕ поверх модели и гардероба.
+• HUD (бренд, звёзды, клиенты, монеты) — узкой полосой сверху.
+
+УПРАВЛЕНИЕ: клик/тап по карточкам одежды; кнопки повернуть модель и отправить образ.
 
 ${TECH}
 
@@ -265,23 +311,33 @@ ${DEVCARD}`
     title: 'My Café', tagline: 'Своё кафе · гости · рецепты · чаевые · рейтинг',
     role: 'Владелица: Кафе <b>{name}</b>',
     prompt:
-`Create a browser game in a single HTML file using HTML5 Canvas — café manager "MY CAFÉ".
+`Создай браузерную игру в одном HTML-файле на HTML5 Canvas — менеджер кафе «MY CAFÉ».
 
-PLAYER: Owner = {name} · Café = "Café {name}" · Permanent badge: "AI Entrepreneur · {name}"
-PERSONALITY: {desc}.
+ИГРОК: владелица = {name} · кафе «Café {name}» · постоянный бейдж «AI-предприниматель · {name}». Характер: {desc}.
 
-GOAL: Serve each guest the right order before their patience runs out; keep the rating 5★.
+ЦЕЛЬ: подавать гостям нужный заказ до того, как кончится терпение; держать рейтинг 5★.
 
-CORE MECHANICS:
-• Guests arrive with a speech bubble order (e.g. latte + croissant) and a patience timer.
-• Tap ingredients/items to assemble the order on a tray, then serve the matching guest.
-• Correct & fast = big tip + happy face; wrong or slow = lost tip + angry face.
-• Earn money → buy new menu items, decor and faster equipment (upgrades shop between days).
-• Days have a rush hour with more guests for combo tips.
+МЕХАНИКА:
+• Гости приходят с заказом в облачке (например, латте + круассан) и полоской терпения.
+• Тапаешь по ингредиентам/блюдам, собираешь заказ на подносе и подаёшь гостю.
+• Верно и быстро = большие чаевые и довольное лицо; неверно/медленно = минус чаевые и злое лицо.
+• Деньги → новые позиции меню, декор и быстрое оборудование (магазин апгрейдов между днями).
+• В часы пик гостей больше — за комбо-чаевые.
 
-CONTROLS: tap to build orders and serve; drag optional.
-UI: money, day, café rating (stars), tip combo, guests waiting.
-ART: cozy café, steam off drinks, hearts when a guest is happy, gentle day/night light.
+ВИЗУАЛ И ДЕТАЛИЗАЦИЯ (очень детально, вау-эффект):
+• Уютное кафе: деревянная стойка, полки с банками, растения, гирлянды, тёплый свет, мягкий пар над горячими напитками.
+• Гости — разные милые персонажи с эмоциями (радость/нетерпение/злость); облачко заказа с аккуратными иконками блюд.
+• Кнопки меню — карточки с иконкой блюда И подписью названия.
+• Эффекты: сердечки над довольным гостем, разлетающиеся монетки и «дзынь» при чаевых, мягкая смена день/ночь.
+
+РАСКЛАДКА — ВАЖНО, чтобы НИЧЕГО не перекрывалось:
+• HUD сверху: деньги · день · рейтинг (звёзды) · комбо.
+• Очередь гостей — рядом в верхней части, у каждого облачко заказа и (у первого) полоска терпения.
+• Поднос-сборка — отдельной зоной по центру (видно собранные позиции).
+• Меню-кнопки — аккуратной лентой/сеткой в нижней части, каждая с иконкой и подписью.
+• Кнопка «Подать» — отдельной зоной, НЕ поверх меню и подноса.
+
+УПРАВЛЕНИЕ: тап по меню — добавить на поднос; тап по подносу — очистить; кнопка «Подать».
 
 ${TECH}
 
@@ -294,24 +350,31 @@ ${DEVCARD}`
     title: 'Pet World', tagline: 'Виртуальный питомец · уход · мини-игры · настроение',
     role: 'Хозяйка: <b>{name}</b>',
     prompt:
-`Create a browser game in a single HTML file using HTML5 Canvas — virtual pet "PET WORLD".
+`Создай браузерную игру в одном HTML-файле на HTML5 Canvas — виртуальный питомец «PET WORLD».
 
-PLAYER: Owner = {name} · Permanent badge: "AI Pet Trainer · {name}"
-Pet name asked via a text input on the start screen.
-PERSONALITY: {desc}.
+ИГРОК: хозяйка = {name} · постоянный бейдж «AI-тренер питомцев · {name}». Имя питомца спрашивается текстовым полем на старте. Характер: {desc}.
 
-GOAL: Keep your pet happy, fed, clean and rested; level it up through care and play.
+ЦЕЛЬ: держать питомца счастливым, сытым, чистым и отдохнувшим; прокачивать его уходом и игрой.
 
-CORE MECHANICS:
-• Four needs bars: Hunger, Happiness, Energy, Hygiene — they slowly drop in real time.
-• Actions: Feed, Play (a quick mini-game), Wash, Sleep — each refills the matching bar.
-• The pet reacts with cute animated faces & sounds; neglect makes it sad.
-• XP from good care levels the pet up and unlocks accessories and new mini-games.
-• A day/night cycle: pet wants to sleep at night.
+МЕХАНИКА:
+• Четыре полоски потребностей: Голод, Радость, Энергия, Чистота — медленно падают в реальном времени.
+• Действия: Покормить, Играть (быстрая мини-игра), Помыть, Спать — каждое пополняет свою полоску.
+• Питомец реагирует милыми анимациями и звуками; от запущенности грустит.
+• XP за хороший уход поднимает уровень и открывает аксессуары и новые мини-игры.
+• Цикл день/ночь: ночью питомец хочет спать.
 
-CONTROLS: tap the action buttons; the play mini-game uses tap timing.
-UI: four need bars, level + XP, coins, mood emoji.
-ART: adorable blob/cat pet with blinking eyes, bouncy idle animation, hearts & sparkles, soft room background.
+ВИЗУАЛ И ДЕТАЛИЗАЦИЯ (очень детально, вау-эффект):
+• Питомец — очаровательный котик/блоб с большими глазами: моргание, дыхание, покачивание (idle), эмоции (счастлив/грустит/спит с «Z-z-z»).
+• Уютная комната: фон со стенами, ковёр, окно (день/ночь), полка с игрушками, мягкие тени.
+• Эффекты: сердечки, крошки еды и пузыри при действиях, вспышка и салют при level-up.
+
+РАСКЛАДКА — ВАЖНО, чтобы НЕ было пустых кнопок и наложений:
+• ВЕРХ — четыре полоски потребностей, КАЖДАЯ с иконкой, НАЗВАНИЕМ и числом %. Текст контрастный, не сливается с плашкой.
+• ЦЕНТР — питомец в комнате.
+• НИЗ — четыре кнопки действий сеткой 2×2, у КАЖДОЙ обязательно иконка И подпись: «Покормить», «Играть», «Помыть», «Спать» (сначала фон кнопки, потом текст поверх!). Никаких пустых плашек.
+• HUD (имя, уровень, монеты, настроение) — компактно сверху.
+
+УПРАВЛЕНИЕ: тап по кнопкам действий; мини-игра «Играть» — на тайминг тапа.
 
 ${TECH}
 
@@ -324,22 +387,26 @@ ${DEVCARD}`
     title: 'Memory Match', tagline: 'Парные карточки · уровни · таймер · звёзды',
     role: 'Игрок: <b>{name}</b>',
     prompt:
-`Create a browser game in a single HTML file using HTML5 Canvas — memory game "MEMORY MATCH".
+`Создай браузерную игру в одном HTML-файле на HTML5 Canvas — игру на память «MEMORY MATCH».
 
-PLAYER: Player = {name} · Permanent badge: "AI Memory Star · {name}"
-PERSONALITY: {desc}.
+ИГРОК: игрок = {name} · постоянный бейдж «AI-звезда памяти · {name}». Характер: {desc}.
 
-GOAL: Find all matching pairs in as few moves as possible across rising levels.
+ЦЕЛЬ: найти все пары за минимум ходов на растущих уровнях.
 
-CORE MECHANICS:
-• Grid of face-down cards with cute emoji/icons; flip two, keep matches, flip mismatches back.
-• Levels grow the grid (4→6→8 pairs); each level has a move & time target for 1–3 stars.
-• Combo bonus for consecutive matches; gentle shuffle animation between levels.
-• Best moves/time saved to localStorage.
+МЕХАНИКА:
+• Сетка карточек рубашкой вверх с милыми иконками; переворачиваешь две, совпали — остаются, нет — переворачиваются обратно.
+• Уровни растят сетку (4→6→8 пар); у каждого цель по ходам и времени на 1–3 звезды.
+• Бонус за серию совпадений; мягкая анимация перемешивания между уровнями.
+• Лучшие ходы/время — в localStorage.
 
-CONTROLS: click/tap a card to flip.
-UI: moves, time, pairs left, level, stars earned.
-ART: glossy flip animation, soft pastel cards, sparkle on a match, victory confetti.
+ВИЗУАЛ И ДЕТАЛИЗАЦИЯ (очень детально, вау-эффект):
+• Карточки с настоящим 3D-переворотом (масштаб по X), глянцем и мягкой тенью; на рубашке — аккуратный узор бренда, на лицевой стороне — милые детальные иконки.
+• Фон — пастельный градиент с боке и лёгким движением.
+• Эффекты: вспышка и искры при совпадении, лёгкая тряска пары при ошибке, конфетти при завершении уровня.
+
+РАСКЛАДКА (без наложений): сверху — ходы, время, уровень, звёзды; сетка карточек по центру с равными отступами, не вылезает за края при любом размере.
+
+УПРАВЛЕНИЕ: клик/тап по карточке.
 
 ${TECH}
 
@@ -352,22 +419,27 @@ ${DEVCARD}`
     title: 'Bubble Pop', tagline: 'Лопай пузыри · цепочки · бонусы · комбо-эффекты',
     role: 'Игрок: <b>{name}</b>',
     prompt:
-`Create a browser game in a single HTML file using HTML5 Canvas — bubble popper "BUBBLE POP".
+`Создай браузерную игру в одном HTML-файле на HTML5 Canvas — лопалку пузырей «BUBBLE POP».
 
-PLAYER: Player = {name} · Permanent badge: "AI Bubble Queen · {name}"
-PERSONALITY: {desc}.
+ИГРОК: игрок = {name} · постоянный бейдж «AI-королева пузырей · {name}». Характер: {desc}.
 
-GOAL: Pop groups of same-colored bubbles to score; clear the board before time runs out.
+ЦЕЛЬ: лопать группы пузырей одного цвета и набирать очки, пока не вышло время.
 
-CORE MECHANICS:
-• Floating bubbles drift up the screen; tap a bubble to pop it and all same-color neighbors (flood fill).
-• Bigger groups = exponential score and a satisfying combo flash.
-• Special bubbles: rainbow (pops any color nearby), bomb (clears a radius), star (slow-mo).
-• New bubbles keep spawning; a level meter fills as you score.
+МЕХАНИКА:
+• Пузыри плавно всплывают вверх; тап по пузырю лопает его и всех соседей того же цвета (заливка по близости).
+• Чем больше группа — тем экспоненциально больше очков и ярче комбо-вспышка.
+• Спец-пузыри: радужный (лопает любой цвет рядом), бомба (чистит радиус), звезда (замедление).
+• Новые пузыри постоянно появляются; шкала уровня растёт от очков.
 
-CONTROLS: click/tap bubbles.
-UI: score, time, combo, level, best score.
-ART: glossy translucent bubbles with highlights, splash particles on pop, soft gradient sky.
+ВИЗУАЛ И ДЕТАЛИЗАЦИЯ (очень детально, вау-эффект):
+• Пузыри — глянцевые полупрозрачные сферы с радиальным градиентом, бликом и лёгким преломлением; разные мягкие цвета.
+• Фон — нежное небо-градиент с облаками и боке, мягкая анимация.
+• Спец-пузыри узнаваемы (радуга/бомба/звезда) с особым свечением.
+• Эффекты: брызги-частицы при лопании, цепная вспышка для больших групп, мягкий «поп»-звук.
+
+РАСКЛАДКА (без наложений): сверху — очки, время, комбо, уровень, рекорд; пузыри — на всём поле, не вылезают за края.
+
+УПРАВЛЕНИЕ: клик/тап по пузырям.
 
 ${TECH}
 
@@ -381,22 +453,27 @@ ${DEVCARD}`
     role: 'Кондитер: <b>{name}</b>',
     theme: 'sweet',
     prompt:
-`Create a browser game in a single HTML file using HTML5 Canvas — catch game "SWEET CATCH".
+`Создай браузерную игру в одном HTML-файле на HTML5 Canvas — «лови сладости» «SWEET CATCH».
 
-PLAYER: Confectioner = {name} · Permanent badge: "AI Pastry Chef · {name}"
-PERSONALITY: {desc}.
+ИГРОК: кондитер = {name} · постоянный бейдж «AI-кондитер · {name}». Характер: {desc}.
 
-GOAL: Catch falling sweets in your basket while dodging hot chili peppers.
+ЦЕЛЬ: ловить падающие сладости в корзинку, уворачиваясь от острых перчинок.
 
-CORE MECHANICS:
-• Move the basket left/right (mouse / arrows / drag).
-• Good drops (cupcakes, donuts, candy, hearts) = points; bad drops (chili) = lose a life.
-• Combo for catching several sweets in a row; a "sugar rush" power-up doubles points briefly.
-• Fall speed & density rise over time; occasional candy-rain bonus burst.
+МЕХАНИКА:
+• Двигай корзинку влево/вправо (мышь / ←→ / перетаскивание).
+• Хорошее (кексы, пончики, конфеты, сердечки) = очки; плохое (перчик) = минус жизнь.
+• Комбо за серию пойманных сладостей; бонус «сахарный раш» ненадолго удваивает очки.
+• Скорость и плотность растут; иногда — бонусный «конфетный дождь».
 
-CONTROLS: move horizontally with mouse / ←→ / touch-drag.
-UI: score, lives, combo, power-up status, best score.
-ART: pastel candy-land, bouncing sweets, sparkle on catch, cute basket, confetti on combo.
+ВИЗУАЛ И ДЕТАЛИЗАЦИЯ (очень детально, вау-эффект):
+• Палитра — конфетная страна: пастельно-розовый, мятный, лавандовый; фон с леденцами, облаками-зефирами и боке.
+• Сладости детальные, с бликами и тенью (кекс с вишенкой, глазированный пончик, полосатый леденец, сердечко); перчик — яркая опасность.
+• Корзинка — милая, плетёная, с лёгким покачиванием.
+• Эффекты: блеск-сверкание при ловле, радужная вспышка и ускорение в «сахарный раш», конфетти при комбо.
+
+РАСКЛАДКА (без наложений): сверху — очки, жизни-иконки, комбо, статус бонуса, рекорд; корзинка — у нижнего края; сладости падают по всему полю.
+
+УПРАВЛЕНИЕ: мышь / ←→ / перетаскивание пальцем по горизонтали.
 
 ${TECH}
 
