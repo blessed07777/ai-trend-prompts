@@ -1,5 +1,5 @@
 /* ============================================================
-   app.js — UI: вкладки, персонализация, копирование, модалки
+   app.js — UI: вкладки, персонализация, копирование
    ============================================================ */
 (function () {
   const $ = s => document.querySelector(s);
@@ -13,7 +13,6 @@
   };
 
   let currentTab = 'girls';
-  let modalDestroy = null;
   let labDestroy = null;
   const cardRefs = [];
 
@@ -79,8 +78,7 @@
     const actions = document.createElement('div'); actions.className = 'card-actions';
     const bCopy = document.createElement('button'); bCopy.className = 'btn btn-primary'; bCopy.innerHTML = '📋 Скопировать';
     const bShare = document.createElement('button'); bShare.className = 'btn btn-ghost'; bShare.innerHTML = '↗ Поделиться';
-    const bPlay = document.createElement('button'); bPlay.className = 'btn btn-play'; bPlay.innerHTML = '▶ Играть';
-    actions.append(bPlay, bCopy, bShare);
+    actions.append(bCopy, bShare);
 
     card.append(top, title, desc, role, prompt, actions);
 
@@ -98,7 +96,6 @@
       if (ok) { bCopy.classList.add('copied'); bCopy.innerHTML = '✓ Скопировано'; toast('Промпт «' + g.title + '» скопирован!'); setTimeout(() => { bCopy.classList.remove('copied'); bCopy.innerHTML = '📋 Скопировать'; }, 1400); }
     };
     bShare.onclick = () => share('AI Trend — ' + g.title, fill(g.prompt, student()));
-    bPlay.onclick = () => openGame(g);
 
     return card;
   }
@@ -130,26 +127,6 @@
 
   function refreshAll() { cardRefs.forEach(r => r.refresh()); updateChip(); }
 
-  /* ----------------------- modal / games ----------------------- */
-  function openModal(title) {
-    $('#modalTitle').textContent = title;
-    $('#modalBody').innerHTML = '';
-    $('#modal').hidden = false;
-    document.body.style.overflow = 'hidden';
-  }
-  function closeModal() {
-    if (modalDestroy) { try { modalDestroy(); } catch (e) {} modalDestroy = null; }
-    $('#modal').hidden = true;
-    document.body.style.overflow = '';
-  }
-  function openGame(g) {
-    openModal(g.emoji + ' ' + g.title);
-    const fn = window.GAMES && window.GAMES[g.gameKey];
-    const body = $('#modalBody');
-    if (!fn) { body.innerHTML = '<p style="text-align:center;color:var(--ink-soft)">Демо скоро появится 🙂</p>'; return; }
-    modalDestroy = fn(body, { name: student().name, theme: g.theme });
-  }
-
   /* ----------------------- theme ----------------------- */
   function applyTheme(t) {
     document.documentElement.setAttribute('data-theme', t);
@@ -176,10 +153,6 @@
     $('#studentDesc').addEventListener('input', refreshAll);
 
     $('#themeToggle').onclick = () => applyTheme(document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
-
-    $('#modalClose').onclick = closeModal;
-    $('#modal').addEventListener('click', e => { if (e.target === $('#modal')) closeModal(); });
-    window.addEventListener('keydown', e => { if (e.key === 'Escape' && !$('#modal').hidden) closeModal(); });
 
     updateChip();
     renderSection();
